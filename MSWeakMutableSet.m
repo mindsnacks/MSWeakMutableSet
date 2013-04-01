@@ -48,14 +48,9 @@ static CFHashCode MSWeakSetHashCallBack(const void *value);
 
 #pragma mark - NSProxy
 
-- (void)forwardInvocation:(NSInvocation *)invocation
+- (id)forwardingTargetForSelector:(SEL)selector
 {
-    [invocation invokeWithTarget:self.set];
-}
-
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)sel
-{
-    return [self.set methodSignatureForSelector:sel];
+    return self.set;
 }
 
 - (BOOL)respondsToSelector:(SEL)aSelector
