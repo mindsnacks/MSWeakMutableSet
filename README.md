@@ -3,6 +3,13 @@ MSWeakMutableSet
 
 Behaves exactly like an `NSMutableSet`, but doesn't retain the objects.
 
+# NOTE
+If you're targeting iOS6+ you can use the builtin `NSHashTable` like this:
+
+```objc
+NSHashTable *weakSet = [NSHashTable weakObjectsHashTable];
+```
+
 ## Usage
 
 Just create an `NSMutableSet` object by calling this constructor on `MSWeakMutableSet`:
